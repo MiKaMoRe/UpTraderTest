@@ -6,7 +6,6 @@ import sys
 
 
 def main():
-    activate_env() # Set all environment variables
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'tree_menu.settings')
     try:
@@ -29,4 +28,5 @@ def activate_env():
 
 
 if __name__ == '__main__':
+    activate_env() # Set all environment variables
     main()
