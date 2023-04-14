@@ -1,0 +1,9 @@
+#!/bin/bash
+arguments=()
+
+for var in "$@"
+do
+    arguments+=("${var}")
+done
+
+python3 $VIRTUAL_ENV/../src/manage.py ${arguments[@]}
