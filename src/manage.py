@@ -3,6 +3,7 @@
 import os
 import re
 import sys
+from pathlib import Path
 
 
 def main():
@@ -20,7 +21,8 @@ def main():
 
 
 def activate_env():
-    env = open('.env')
+    project_dir = Path(__file__).resolve().parent.parent
+    env = open(f'{project_dir}/.env')
     for row in env:
         var_name = re.search(r'\w+=', row)[0][:-1]
         value = re.search(r'=[\w\W]+', row)[0][1:-1]
