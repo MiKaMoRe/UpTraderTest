@@ -27,18 +27,18 @@ class Directory(models.Model):
         verbose_name_plural = 'директории'
     
     def validate_parent(self):
-        if self.parent.pk == self.pk:
+        if self.parent and self.parent.pk == self.pk:
             raise ValidationError("Directory self parent")
-
-    def validate_root(self):
-        if self.is_root and self.parent != None:
-            raise ValidationError("Root directory can't have a parent")
+    
+    def root_switch(self):
+        if self.parent:
+            self.is_root = False
+        else:
+            self.is_root = True
     
     def clean(self):
-        if self.parent == None:
-            self.is_root == True
+        self.root_switch()
         self.validate_parent()
-        self.validate_root()
     
     def save(self, *args, **kwargs):
         self.full_clean()
