@@ -1,4 +1,5 @@
 from django.db.models.query import RawQuerySet
+from menu.models import Directory
 
 
 class TreeService():
@@ -22,7 +23,7 @@ class TreeService():
         for child in childs:
             self.prepare_data(child, depth + 1, url)
 
-    def get_childs_of(self, target_dir: RawQuerySet):
+    def get_childs_of(self, target_dir: Directory):
         """
             Getting childs of target dir
         """
