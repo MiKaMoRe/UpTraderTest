@@ -14,8 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path
+from django.views.generic.base import RedirectView
+from menu.views import MenuView
 
 urlpatterns = [
+    re_path(r'panel/(?P<path>[\w\W]+)', MenuView.as_view()),
     path('admin/', admin.site.urls),
+    path('', RedirectView.as_view(url='menu', permanent=False)),
 ]

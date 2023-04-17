@@ -1,0 +1,106 @@
+[
+    {
+        "model": "menu.Directory",
+        "pk": 1,
+        "fields": {
+            "is_root": true,
+            "name": "projects"
+        }
+    },
+    {
+        "model": "menu.Directory",
+        "pk": 2,
+        "fields": {
+            "name": "django",
+            "parent": 1
+        }
+    },
+    {
+        "model": "menu.Directory",
+        "pk": 3,
+        "fields": {
+            "is_root": true,
+            "name": "machines"
+        }
+    },
+    {
+        "model": "menu.Directory",
+        "pk": 4,
+        "fields": {
+            "name": "ruby on rails",
+            "parent": 1
+        }
+    },
+    {
+        "model": "menu.Directory",
+        "pk": 5,
+        "fields": {
+            "name": "Django shop",
+            "parent": 2
+        }
+    },
+    {
+        "model": "menu.Directory",
+        "pk": 6,
+        "fields": {
+            "name": "src",
+            "parent": 5
+        }
+    },
+    {
+        "model": "menu.Directory",
+        "pk": 7,
+        "fields": {
+            "name": "test project",
+            "parent": 2
+        }
+    },
+    {
+        "model": "menu.Directory",
+        "pk": 7,
+        "fields": {
+            "name": "GitHub",
+            "parent": 4
+        }
+    },
+    {
+        "model": "menu.Directory",
+        "pk": 8,
+        "fields": {
+            "name": "cars",
+            "parent": 3
+        }
+    },
+    {
+        "model": "menu.Directory",
+        "pk": 9,
+        "fields": {
+            "name": "motocycles",
+            "parent": 3
+        }
+    },
+    {
+        "model": "menu.Directory",
+        "pk": 10,
+        "fields": {
+            "name": "ships",
+            "parent": 3
+        }
+    },
+    {
+        "model": "menu.Directory",
+        "pk": 11,
+        "fields": {
+            "name": "chevrolet",
+            "parent": 9
+        }
+    },
+    {
+        "model": "menu.Directory",
+        "pk": 12,
+        "fields": {
+            "name": "nissan",
+            "parent": 9
+        }
+    }
+]

@@ -1,0 +1,26 @@
+<ul class="tree-menu">
+  {% for dir in menu_tree %}
+    {% if dir.is_root %}
+      <li
+        data-name="{{ dir.name }}"
+        data-id="{{ dir.id }}"
+        data-is-root="{{ dir.is_root }}"
+        data-is-active="{{ dir.is_active }}"
+        id="menu-{{ dir.name }}{{ dir.id }}">
+        <a href="{{ dir.url }}">{{ dir.name }}</a>
+        <ul></ul>
+      </li>
+    {% else %}
+      <li
+        href="{{ dir.url }}"
+        data-name="{{ dir.name }}"
+        data-id="{{ dir.id }}"
+        data-parent-id="{{ dir.parent_id }}"
+        data-is-active="{{ dir.is_active }}">
+        <a href="{{ dir.url }}">{{ dir.name }}</a>
+        <ul></ul>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
+<br>

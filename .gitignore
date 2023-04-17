@@ -34,3 +34,6 @@ pip-delete-this-directory.txt
 # Environments
 venv/
 .env
+
+# Static files
+src/static
