@@ -19,7 +19,7 @@ from django.views.generic.base import RedirectView
 from menu.views import MenuView
 
 urlpatterns = [
-    re_path(r'panel/(?P<path>[\w\W]+)', MenuView.as_view()),
+    re_path(r'panel(?P<path>[\w\W]+)', MenuView.as_view()),
     path('admin/', admin.site.urls),
-    path('', RedirectView.as_view(url='menu', permanent=False)),
+    path('', RedirectView.as_view(url='/panel', permanent=False)),
 ]
