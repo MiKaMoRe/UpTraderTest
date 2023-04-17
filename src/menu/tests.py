@@ -30,3 +30,13 @@ class TreeServiceTestCase(TestCase):
         self.assertEqual(self.directory.is_active, True)
         with self.assertRaises(AttributeError):
             self.subdir.is_active
+
+
+class RequestsTestCase(TestCase):
+    def setUp(self):
+        self.client = Client()
+
+    def test_root(self):
+        response = self.client.get("/")
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(response.url, '/panel')

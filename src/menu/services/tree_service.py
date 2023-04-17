@@ -8,7 +8,7 @@ class TreeService():
         self.active_dirs = active_dirs
         self.root = self.get_root()
     
-    def prepare_data(self, parent, depth=0, url='/panel/'):
+    def prepare_data(self, parent: Directory, depth=0, url='/panel/'):
         """
             Recursive preparing directories to render
         """
